@@ -27,7 +27,7 @@ To implement our reviewer suggestion model, we first cleaned the abstract string
 
 In addition to the corpus of COVIDScholar papers, we used papers from PubMed to train our model further. PubMed is another database of academic research papers with existing categorical field tags, so we were able to use a subset of its data to teach our model to classify the subject matter of an abstract.
 
-The model allows us to query the N most similar papers in our corpus to any given abstract string. For reviewer suggestions, we calculate the cosine similarity of all other papers in the corpus to the paper being reviewed, and weight authors’ contributions to the most similar papers to compute a reviewer relevance score.
+The model allows us to query the N most similar papers in our corpus to any given abstract string. For reviewer suggestions, we calculate the cosine similarity of all other papers in the corpus to the paper being reviewed, and weight authors’ contributions to the most similar papers to compute a reviewer relevance score. In the backend of the COVIDScholar web application, our embeddings are searched through Vespa.ai for nearest neighbor calculations to limit the search to similar papers before calculating author relevance scores.
 
 
 ### User Interface
